@@ -1,2 +1,1 @@
-# gamejams
-Repo for game jams
+Repo for game jam sources.
