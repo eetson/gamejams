@@ -1,0 +1,9 @@
+{
+	"title": {
+		"start_up" : "true",
+		"resource_path": "res://assets/audio/music/Mysterious-Deep.ogg"
+	},
+	"hud": {
+		"resource_path": "res://assets/audio/music/Smoky-Sky_Looping.ogg"
+	}
+}

@@ -1,0 +1,7 @@
+arrows/wasd    to    move
+Space    to    jump
+
+Collect    all    the    crystals
+The    floor    is    lava
+
+Good    luck!!

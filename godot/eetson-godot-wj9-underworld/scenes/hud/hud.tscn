@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/hud/hud.gd" type="Script" id=1]
+[ext_resource path="res://scenes/game/game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/title-vignette.png" type="Texture" id=3]
+[ext_resource path="res://scenes/components/button/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/title.tres" type="DynamicFont" id=5]
+
+[node name="hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+stretch_mode = 7
+
+[node name="ViewportContainer" type="ViewportContainer" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="TextureRect/ViewportContainer"]
+size = Vector2( 1024, 600 )
+handle_input_locally = false
+render_target_update_mode = 3
+gui_disable_input = true
+shadow_atlas_size = 4096
+shadow_atlas_quad_0 = 1
+
+[node name="game" parent="TextureRect/ViewportContainer/Viewport" instance=ExtResource( 2 )]
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="Button" parent="." instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -52.0
+margin_right = 165.0
+margin_bottom = 0.0
+text = "Back"
+sceneToLoad = "res://scenes/title/title.tscn"
+transitionSpeed = 1.0
+fadeSound = true
+
+[node name="score-label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -93.0
+margin_top = 22.0
+margin_right = 93.0
+margin_bottom = 91.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.972549, 0.772549, 0.741176, 1 )
+text = "score"
+align = 1
+valign = 1
